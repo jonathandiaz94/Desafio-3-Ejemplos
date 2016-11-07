@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="main" ng-app ng-controller="InlineEditorController" ng-click="hideTooltip()">
+
+	
+	<div class="tooltip" ng-click="$event.stopPropagation()" ng-show="showtooltip">
+
+		
+		<input type="text" ng-model="value" />
+	</div>
+
+	
+	<p ng-click="toggleTooltip($event)">{{value}}</p>
+
+</div>
+<script src="angular.js"></script>
+</body>
+</html>

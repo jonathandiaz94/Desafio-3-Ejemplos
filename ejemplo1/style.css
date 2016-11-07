@@ -1,0 +1,9 @@
+/* Styles go here */
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}

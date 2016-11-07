@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link data-require="bootstrap@*" data-semver="3.3.1" rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+    <script data-require="bootstrap@*" data-semver="3.3.1" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script data-require="angular.js@1.3.0" data-semver="1.3.0" src="https://code.angularjs.org/1.3.0/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js"></script>
+  </head>
+
+  <body data-ng-app='formApp'>
+    <div class='container'>
+      <h2>AngularJS Form!</h2>
+    
+      <div data-ng-controller='MainCtrl'>
+        <form name='exampleForm'>
+          <div class='form-group'>
+            <label for="name">Name</label>
+            <input type="text" class='form-control' placeholder='name' 
+            name='name' data-ng-model='formData.name' required 
+            data-ng-class='{ error: exampleForm.name.$invalid && !exampleForm.$pristine }'>
+            <!--<span data-ng-show="!exampleForm.$pristine && exampleForm.name.$error.required">Name is required.</span>-->
+          </div>
+          
+          <div class='form-group'>
+            <label for="lastname">Last Name</label>
+            <input type="text" class='form-control' placeholder='last name' 
+            name='lastname' data-ng-model='formData.lastname' required
+            data-ng-class='{ error: exampleForm.lastname.$invalid && !exampleForm.$pristine }'>
+            <!--<span data-ng-show='!exampleForm.$pristine && exampleForm.lastname.$error.required'>Last name is required</span>-->
+          </div>
+          
+          <div class='form-group'>
+            <label for="email">Email</label>
+            <input type="email" class='form-control' placeholder='example@email.com' 
+            name='email' data-ng-model='formData.email' required
+            data-ng-class='{ error: exampleForm.email.$invalid && !exampleForm.$pristine, warning: exampleForm.email.$error.email }'>
+           
+          </div>
+          
+          <input type="submit" class='btn btn-success pull-right' 
+          data-ng-click='submitForm(formData)' data-ng-disabled='!exampleForm.$valid'>
+        </form>
+        <br>
+        Form content:
+        {{formData}}
+      </div>
+    </div>
+    
+  </body>
+
+</html>
